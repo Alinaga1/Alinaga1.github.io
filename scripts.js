@@ -14,29 +14,45 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
         if (isTouchDevice) {
-            // Свайпы для мобильных устройств
             let startX;
+            let startY;
+            let isSwiping = false;
 
             thumbnail.addEventListener('touchstart', function(event) {
                 startX = event.touches[0].clientX;
+                startY = event.touches[0].clientY;
+                isSwiping = true;
             });
 
             thumbnail.addEventListener('touchmove', function(event) {
-                event.preventDefault();
-                let endX = event.touches[0].clientX;
+                if (!isSwiping) return;
 
-                if (startX - endX > 50) {
-                    // Свайп влево
-                    currentHiddenIndices[index] = (currentHiddenIndices[index] + 1) % hiddenImages.length;
-                    thumbnailImage.src = hiddenImages[currentHiddenIndices[index]].src;
-                } else if (endX - startX > 50) {
-                    // Свайп вправо
-                    currentHiddenIndices[index] = (currentHiddenIndices[index] - 1 + hiddenImages.length) % hiddenImages.length;
-                    thumbnailImage.src = hiddenImages[currentHiddenIndices[index]].src;
+                let endX = event.touches[0].clientX;
+                let endY = event.touches[0].clientY;
+                let diffX = startX - endX;
+                let diffY = startY - endY;
+
+                // Проверка, что свайп горизонтальный
+                if (Math.abs(diffX) > Math.abs(diffY)) {
+                    event.preventDefault();
+                    if (diffX > 50) {
+                        // Свайп влево
+                        currentHiddenIndices[index] = (currentHiddenIndices[index] + 1) % hiddenImages.length;
+                        thumbnailImage.src = hiddenImages[currentHiddenIndices[index]].src;
+                        isSwiping = false;
+                    } else if (diffX < -50) {
+                        // Свайп вправо
+                        currentHiddenIndices[index] = (currentHiddenIndices[index] - 1 + hiddenImages.length) % hiddenImages.length;
+                        thumbnailImage.src = hiddenImages[currentHiddenIndices[index]].src;
+                        isSwiping = false;
+                    }
                 }
             });
+
+            thumbnail.addEventListener('touchend', function() {
+                isSwiping = false;
+            });
         } else {
-            // Прокрутка колесика мыши для десктопов
             thumbnail.addEventListener('wheel', function(event) {
                 event.preventDefault();
                 if (event.deltaY < 0) {
