@@ -1,133 +1,61 @@
 body {
-    margin: 0;
+    font-family: Arial, sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #000000; /* Вы можете изменить цвет фона по своему усмотрению */
-    animation: fadeIn 1s;
+    background-color: #f0f0f0;
+    margin: 0;
 }
 
-
-.container {
-    width: 1920px;
-    height: 1080px;
-    background-color: red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
-.triangle-button {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid yellow;
-    position: relative;
-    text-decoration: none;
-}
-
-.triangle-button::after {
-    content: "Go to Page 1";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    font-size: 16px;
+.main-container {
     text-align: center;
-    white-space: nowrap;
 }
 
-.white-triangle-button {
-    width: 0;
-    height: 0;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid white;
-    position: relative;
-    text-decoration: none;
+.main-image-container {
+    margin-bottom: 20px;
 }
 
-.white-triangle-button::after {
-    content: "Back to Home";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: black;
-    font-size: 16px;
-    text-align: center;
-    white-space: nowrap;
+#main-image {
+    width: 100%;
+    height: auto;
+    max-width: 600px;
+    max-height: 400px;
+    object-fit: cover;
 }
 
 .slider-container {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.slider {
-    max-width: 800px;
-    position: relative;
-    text-align: center;
-}
-
-.main-image {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-}
-
-.thumbnails {
-    display: flex;
     justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .thumbnail {
-    width: 100px;
-    height: 100px;
+    margin: 5px;
+    position: relative;
+}
+
+.thumbnail img {
+    width: 80px;
+    height: 80px;
     cursor: pointer;
-    border-radius: 10px;
-    border: 2px solid transparent;
-    transition: border-color 0.3s;
+    object-fit: cover;
 }
 
-.thumbnail.active, .thumbnail:hover {
-    border-color: #000;
+.hidden-images {
+    display: none;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
+@media (min-width: 768px) {
+    .thumbnail img {
+        width: 100px;
+        height: 100px;
     }
 }
 
-.fade {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    opacity: 0;
-    pointer-events: none;
-    animation: fadeOut 1s;
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
-    to {
-        opacity: 0;
+@media (max-width: 480px) {
+    .thumbnail img {
+        width: 60px;
+        height: 60px;
     }
 }

@@ -3,14 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buttons in Container</title>
+    <title>Advanced Image Slider</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <a href="page1.html" class="triangle-button">Go to Page 1</a>
-        <a href="page2.html" class="triangle-button">Go to Page 2</a>
+    <div class="main-container">
+        <div class="main-image-container">
+            <img id="main-image" src="abst1.png" alt="Main Image">
+        </div>
+        <div class="slider-container">
+            <div class="thumbnail" data-index="0">
+                <img src="00222-3543235397-, (3d render pyramid_0.8), ( (landskape_1.8)), _(twilight lighting_0.4).jpg" alt="1_">
+                <div class="hidden-images">
+                    <img src="1_03.jpg" alt="1_05.jpg">
+                    <img src="1_05.jpg" alt="1_04">
+                    <img src="thumb1-3.jpg" alt="Hidden Image 3">
+                    <img src="thumb1-4.jpg" alt="Hidden Image 4">
+                    <img src="thumb1-5.jpg" alt="Hidden Image 5">
+                </div>
+            </div>
+            <div class="thumbnail" data-index="1">
+                <img src="thumb2.jpg" alt="Thumbnail 2">
+                <div class="hidden-images">
+                    <img src="thumb2-1.jpg" alt="Hidden Image 1">
+                    <img src="thumb2-2.jpg" alt="Hidden Image 2">
+                    <img src="thumb2-3.jpg" alt="Hidden Image 3">
+                    <img src="thumb2-4.jpg" alt="Hidden Image 4">
+                    <img src="thumb2-5.jpg" alt="Hidden Image 5">
+                </div>
+            </div>
+            <div class="thumbnail" data-index="2">
+                <img src="thumb3.jpg" alt="Thumbnail 3">
+                <div class="hidden-images">
+                    <img src="thumb3-1.jpg" alt="Hidden Image 1">
+                    <img src="thumb3-2.jpg" alt="Hidden Image 2">
+                    <img src="thumb3-3.jpg" alt="Hidden Image 3">
+                    <img src="thumb3-4.jpg" alt="Hidden Image 4">
+                    <img src="thumb3-5.jpg" alt="Hidden Image 5">
+                </div>
+            </div>
+            <div class="thumbnail" data-index="3">
+                <img src="thumb4.jpg" alt="Thumbnail 4">
+                <div class="hidden-images">
+                    <img src="thumb4-1.jpg" alt="Hidden Image 1">
+                    <img src="thumb4-2.jpg" alt="Hidden Image 2">
+                    <img src="thumb4-3.jpg" alt="Hidden Image 3">
+                    <img src="thumb4-4.jpg" alt="Hidden Image 4">
+                    <img src="thumb4-5.jpg" alt="Hidden Image 5">
+                </div>
+            </div>
+            <div class="thumbnail" data-index="4">
+                <img src="thumb5.jpg" alt="Thumbnail 5">
+                <div class="hidden-images">
+                    <img src="thumb5-1.jpg" alt="Hidden Image 1">
+                    <img src="thumb5-2.jpg" alt="Hidden Image 2">
+                    <img src="thumb5-3.jpg" alt="Hidden Image 3">
+                    <img src="thumb5-4.jpg" alt="Hidden Image 4">
+                    <img src="thumb5-5.jpg" alt="Hidden Image 5">
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="fade"></div>
+    
+    <script src="scripts.js"></script>
 </body>
 </html>
+```
