@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Image Slider</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        
+        <nav class="navigation-menu">
+            <div class="dropdown">
+                <a href="#">Раздел 1</a>
+                <div class="dropdown-content">
+                    <a href="page1.html">Страница 1.1</a>
+                    <a href="page2.html">Страница 1.2</a>
+                    <a href="page3.html">Страница 1.3</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <a href="#">Раздел 2</a>
+                <div class="dropdown-content">
+                    <a href="page4.html">Страница 2.1</a>
+                    <a href="page5.html">Страница 2.2</a>
+                    <a href="page6.html">Страница 2.3</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+    <div class="main-container">
+        <div class="main-image-container">
+            <img id="main-image" src="mainpicture/2_06.png" alt="Main Image">
+        </div>
+        <div class="slider-container">
+            <div class="thumbnail" data-index="0">
+                <img src="mainpicture/2_11.png" alt="Thumbnail 1">
+                <div class="hidden-images">
+                    <img src="picture/1_26.png" alt="Hidden Image 1">
+                    <img src="picture/1_27.png" alt="Hidden Image 2">
+                    <img src="picture/1_28.png" alt="Hidden Image 3">
+                    <img src="picture/1_29.png" alt="Hidden Image 4">
+                    <img src="picture/1_30.png" alt="Hidden Image 5">
+                </div>
+            </div>
+            <div class="thumbnail" data-index="1">
+                <img src="mainpicture/2_07.png" alt="Thumbnail 2">
+                <div class="hidden-images">
+                    <img src="picture/1_31.png" alt="Hidden Image 1">
+                    <img src="picture/1_32.png" alt="Hidden Image 2">
+                    <img src="picture/1_33.png" alt="Hidden Image 3">
+                    <img src="picture/1_34.png" alt="Hidden Image 4">
+                    <img src="picture/1_35.png" alt="Hidden Image 5">
+                </div>
+            </div>
+            <div class="thumbnail" data-index="2">
+                <img src="mainpicture/2_08.png" alt="Thumbnail 3">
+                <div class="hidden-images">
+                    <img src="picture/1_36.png" alt="Hidden Image 1">
+                    <img src="picture/1_37.png" alt="Hidden Image 2">
+                    <img src="picture/1_38.png" alt="Hidden Image 3">
+                    <img src="picture/1_39.png" alt="Hidden Image 4">
+                    <img src="picture/1_40.png" alt="Hidden Image 5">
+                </div>
+            </div>
+            <div class="thumbnail" data-index="3">
+                <img src="mainpicture/2_09.png" alt="Thumbnail 4">
+                <div class="hidden-images">
+                    <img src="picture/1_41.png" alt="Hidden Image 1">
+                    <img src="picture/1_42.png" alt="Hidden Image 2">
+                    <img src="picture/1_43.png" alt="Hidden Image 3">
+                    <img src="picture/1_44.png" alt="Hidden Image 4">
+                    <img src="picture/1_45.png" alt="Hidden Image 5">
+                </div>
+            </div>
+            <div class="thumbnail" data-index="4">
+                <img src="mainpicture/2_10.png" alt="Thumbnail 5">
+                <div class="hidden-images">
+                    <img src="picture/1_46.png" alt="Hidden Image 1">
+                    <img src="picture/1_47.png" alt="Hidden Image 2">
+                    <img src="picture/1_48.png" alt="Hidden Image 3">
+                    <img src="picture/1_49.png" alt="Hidden Image 4">
+                    <img src="picture/1_50.png" alt="Hidden Image 5">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="instructions">
+        <p id="instruction-text">скрол или свайп на миниатюре для смены</p>
+        <div id="scroll-icon">
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+            <div class="arrow"></div>
+        </div>
+    </div>
+    
+
+    <button onclick="nextPage()">Следующая страница</button>
+
+    <script>
+        function nextPage() {
+            // Замена текущего URL на URL следующей страницы
+            window.location.href = "page3.html";
+        }
+    </script>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 ALINGA. All rights reserved.</p>
+        </div>
+
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
