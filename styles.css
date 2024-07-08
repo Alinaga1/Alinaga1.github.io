@@ -80,12 +80,13 @@ header {
 
 .dropdown-content a:hover {
     background-color:
+}
 .buttons-container {
     display: flex;
     justify-content: center;
     gap: 20px;
 }
-}
+
 
 .dropdown:hover .dropdown-content {
     display: block;

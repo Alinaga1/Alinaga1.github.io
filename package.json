@@ -1,0 +1,16 @@
+{
+  "name": "alinaga1.github.io",
+  "version": "1.0.0",
+  "main": "scripts.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Advanced Image Slider",
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
