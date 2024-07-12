@@ -3,14 +3,14 @@
   "version": "1.0.0",
   "main": "scripts.js",
   "scripts": {
-    "start": "parcel index.html",
-    "build": "parcel build index.html"
+    "start": "vite",
+    "build": "vite build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "Advanced Image Slider",
   "devDependencies": {
-    "parcel": "^2.12.0"
+    "vite": "^4.0.0"
   }
 }
