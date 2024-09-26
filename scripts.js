@@ -1,3 +1,5 @@
+let currentVisibleImage = "resized_images/1_02_resized.png"; // Текущий путь видимого изображения
+
 document.addEventListener("DOMContentLoaded", function() {
     const mainImage = document.getElementById('main-image');
     const thumbnails = document.querySelectorAll('.thumbnail');
@@ -19,12 +21,14 @@ document.addEventListener("DOMContentLoaded", function() {
             currentHiddenIndices[index] = newIndex;
             thumbnailImage.src = hiddenImages[newIndex].src;
             mainImage.src = hiddenImages[newIndex].src;
+            currentVisibleImage = hiddenImages[newIndex].src;  // Обновляем путь текущего изображения
             updateSelectedThumbnail();
         }
 
         // Клик по миниатюре
         thumbnailImage.addEventListener('click', function() {
             mainImage.src = thumbnailImage.src;
+            currentVisibleImage = thumbnailImage.src;  // Обновляем путь текущего изображения
             updateSelectedThumbnail();
         });
 
@@ -70,8 +74,16 @@ document.addEventListener("DOMContentLoaded", function() {
         hiddenImages.forEach(hiddenImage => {
             hiddenImage.addEventListener('click', function() {
                 mainImage.src = hiddenImage.src;
+                currentVisibleImage = hiddenImage.src;  // Обновляем путь текущего изображения
                 updateSelectedThumbnail();
             });
         });
     });
+
+    // Функция для открытия оригинала текущего видимого изображения
+    window.openCurrentOriginal = function() {
+        // Замена на оригинальный путь из папки "picture"
+        let originalImage = currentVisibleImage.replace("resized_images", "picture").replace("_resized", "");
+        window.open(originalImage, '_blank');
+    };
 });
